@@ -1,4 +1,11 @@
-FROM python:3.10
+FROM continuumio/miniconda3
 
-# Install pip packages
-RUN pip install numpy scipy matplotlib ipython jupyter pandas sympy nose scikit-learn
+# Create a conda environment
+RUN conda create --name myenv python=3.10
+
+# Activate the conda environment and install pip packages
+RUN echo "source activate myenv" > ~/.bashrc
+ENV PATH /opt/conda/envs/myenv/bin:$PATH
+
+RUN pip install numpy scipy matplotlib ipython jupyter pandas sympy nose \
+    scikit-learn pylint ipykernel flake8 isort pytest
