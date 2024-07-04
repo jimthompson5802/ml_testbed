@@ -1,0 +1,22 @@
+{
+    "name": "ML Testbed, py3.10",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // Add build arguments here if any
+        }
+    },
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "GitHub.copilot"
+    ],
+    "forwardPorts": [
+        8888 // Default port for Jupyter notebooks
+    ],
+    "postCreateCommand": "pip install -r .devcontainer/requirements.txt",
+    "remoteUser": "root"
+}
