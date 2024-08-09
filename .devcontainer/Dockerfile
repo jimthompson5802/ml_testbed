@@ -8,4 +8,4 @@ RUN echo "source activate myenv" > ~/.bashrc
 ENV PATH /opt/conda/envs/myenv/bin:$PATH
 
 RUN pip install numpy scipy matplotlib ipython jupyter pandas sympy nose \
-    scikit-learn pylint ipykernel black flake8 isort pytest
+    scikit-learn pylint ipykernel black flake8 flake8-pyproject isort pytest
